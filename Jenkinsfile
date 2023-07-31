@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''
         python3 -m venv venv
-        . .venv/bin/activate
+        .venv/bin/activate
         pip install -r requirements.txt
         '''
       }
@@ -13,7 +13,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-        . .venv/bin/activate
+        .venv/bin/activate
         flake8 --exclude=venv* --statistics
         pytest -v --cov=calculator
         '''
